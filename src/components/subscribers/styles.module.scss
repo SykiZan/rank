@@ -1,0 +1,39 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+
+  margin-top: 3rem;
+
+  @include media(md) {
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  & .contentWrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-rows: 1fr 1fr;
+    grid-gap: 0.5rem;
+
+    &.withBg {
+      grid-gap: 2rem !important;
+    }
+
+    @include media(md) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include media(lg) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+.containerRank {
+  padding: 0;
+  max-width: 419px;
+  @media (max-width: 1220px) {
+    max-width: none;
+  }
+}

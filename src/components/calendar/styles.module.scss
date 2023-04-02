@@ -1,0 +1,94 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+
+  @include media(md) {
+    padding-left: 0;
+  }
+
+  &.dark {
+    & :global(.sdp) {
+      background: transparent !important;
+    }
+
+    & :global(.sdp--square-btn) {
+      background: transparent !important;
+    }
+
+    & :global(.sdp--dates-grid) {
+      & p {
+        color: #ffffff !important;
+      }
+    }
+
+    & :global(.sdp--month-name) {
+      color: #ffffff !important;
+    }
+
+    & :global(.sdp--month-picker) {
+      & :global(.sdp--square-btn) {
+        border: 1px solid #ffffff !important;
+        border-radius: 5rem !important;
+      }
+    }
+  }
+
+  & :global(.sdp) {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    box-shadow: none;
+    @include cardRadius;
+
+    padding: 0;
+  }
+
+  & :global(.sdp--dates-grid) {
+    & p {
+      font-family: "Inter", sans-serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #111111;
+    }
+  }
+
+  & :global(.sdp--square-btn) {
+    font-family: "Inter", sans-serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #aaaaaa;
+    width: 3rem;
+    height: 3rem;
+
+    @include media(md) {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    @include media(lg) {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  & :global(.sdp--date-btn__selected) {
+    color: #2c89ff;
+    box-shadow: none;
+    background: inherit;
+    border: 1px solid #2c89ff;
+  }
+
+  & :global(.sdp--month-name) {
+    font-family: "Inter", sans-serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: #111111;
+  }
+
+  & :global(.sdp--month-picker) {
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+}

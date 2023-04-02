@@ -1,0 +1,117 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+  margin-top: 3rem;
+
+  @include media(md) {
+    display: none;
+    padding-left: 0;
+  }
+  @include media(lg) {
+    display: block;
+  }
+
+  &.dark {
+    & .mainTitle {
+      color: #ffffff !important;
+    }
+  }
+
+  & .contentWrap {
+    margin-bottom: 3rem;
+
+    @include media(md) {
+    }
+
+    & .mainTitle {
+      font-family: "Inter", sans-serif;
+      font-size: 1.7rem;
+      color: #131313;
+
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #2c89ff;
+
+      & span {
+        font-weight: 600;
+      }
+    }
+
+    & .contentBox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 1rem;
+      column-gap: 3rem;
+
+      padding: 3rem 0 0 1.25rem;
+
+      @include media(sm) {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      @include media(md) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include media(lg) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      & .contentBoxItem {
+        cursor: pointer;
+
+        position: relative;
+        background: #e8e8e8;
+        width: 100%;
+
+        text-align: center;
+
+        font-family: "Inter", sans-serif;
+        font-size: 1.3rem;
+        color: rgba(0, 0, 0, 0.6);
+
+        padding: 0.5rem 2rem;
+
+        &:first-letter {
+          text-transform: uppercase;
+        }
+
+        &:hover {
+          background: #2c89ff;
+          color: #ffffff;
+        }
+
+        &:before {
+          position: absolute;
+          -webkit-transform: translateY(-50%) translateX(50%) rotate(-45deg);
+          -ms-transform: translateY(-50%) translateX(50%) rotate(-45deg);
+          transform: translateY(-50%) translateX(50%) rotate(-45deg);
+          top: 50%;
+          right: 100%;
+          content: "";
+          background-color: inherit;
+          background-image: none;
+          width: 1.56em;
+          height: 1.56em;
+          -webkit-transition: none;
+          -o-transition: none;
+          transition: none;
+        }
+
+        &:after {
+          position: absolute;
+          content: "";
+          top: 50%;
+          left: -0.25em;
+          margin-top: -0.25em;
+          background-color: #fff !important;
+          width: 0.5em;
+          height: 0.5em;
+          -webkit-box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.3%);
+          box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.3%);
+          border-radius: 500rem;
+        }
+      }
+    }
+  }
+}

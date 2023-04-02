@@ -1,0 +1,151 @@
+@import "../../theme/scss/resources";
+
+.container {
+  background-color: #070d1d;
+  border-top: 1px solid #17536b;
+
+  @include media(md) {
+    grid-column: 1 / 3;
+  }
+
+  & .contentWrap {
+    display: grid;
+    grid-gap: 5rem;
+    @include componentPagePadding;
+    padding-top: 5.5rem !important;
+    padding-bottom: 5.5rem !important;
+
+    @include media(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include media(lg) {
+      grid-template-columns: initial;
+      grid-auto-flow: column;
+      justify-content: space-between;
+      align-content: start;
+      grid-gap: 7rem;
+    }
+
+    @include media(xl) {
+      grid-gap: 12rem;
+    }
+
+    @include media(xxl) {
+      grid-gap: 15rem;
+    }
+
+    @include media(fullHD) {
+      grid-gap: 20rem;
+    }
+
+    & .logoWrap {
+      display: grid;
+      grid-gap: 5rem;
+
+      @include media(md) {
+        justify-items: left;
+        grid-gap: 3rem;
+        grid-template-rows: max-content 1fr;
+      }
+
+      @include media(lg) {
+        grid-gap: 0;
+      }
+      & .imgWrap {
+        display: grid;
+        justify-items: center;
+
+        @include media(md) {
+          justify-items: left;
+        }
+      }
+
+      & .emailWrap {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        justify-content: center;
+        grid-gap: 1.1rem;
+
+        @include media(md) {
+          justify-items: left;
+        }
+
+        & .emailIconWrap {
+          display: grid;
+        }
+
+        & .email {
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 1.8rem;
+          color: #ffffff;
+        }
+      }
+    }
+
+    & .listWrap {
+      & .listTitle {
+        font-family: "Inter", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 1.6rem;
+        line-height: 2.1rem;
+        color: #ffffff;
+
+        margin-bottom: 2rem;
+        text-align: center;
+
+        @include media(md) {
+          text-align: left;
+        }
+      }
+
+      & .listBox {
+        & .listItem {
+          cursor: pointer;
+
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.4rem;
+          line-height: 3rem;
+          color: #ffffff;
+          text-align: center;
+
+          &:hover {
+            color: #2c89ff;
+          }
+
+          @include media(md) {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  & .copyrightWrap {
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+    color: #ffffff;
+
+    text-align: center;
+
+    @include componentPagePadding;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+
+    border-top: 1px solid #17536b;
+
+    @include media(md) {
+      text-align: left;
+    }
+  }
+}

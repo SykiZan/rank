@@ -1,0 +1,202 @@
+@import "../../theme/scss/resources";
+
+.container {
+  background: #24252f;
+
+  @include componentPagePadding;
+
+  @include media(md) {
+    grid-column: 1 / 3;
+  }
+
+  &.dark {
+    background: #2c89ff;
+
+    & .socialBtn {
+      &:hover {
+        & .icon {
+          color: #131313 !important;
+        }
+      }
+    }
+
+    & .authorizationNote {
+      &:hover {
+        color: #131313 !important;
+      }
+    }
+  }
+
+  & .contentWrap {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content max-content;
+    align-items: center;
+    padding: 0.5rem 0;
+
+    @include media(md) {
+      grid-template-columns: max-content 1fr max-content max-content;
+      grid-gap: 1rem;
+    }
+    @include media(lg) {
+      grid-template-columns: max-content 1fr max-content max-content max-content;
+    }
+
+    & .socialWrap {
+      display: grid;
+      grid-auto-flow: column;
+      justify-content: left;
+      grid-gap: 0.25rem;
+
+      @include media(xs) {
+        grid-gap: 0.5rem;
+      }
+
+      & .socialBtn {
+        cursor: pointer;
+
+        display: grid;
+        height: min-content;
+        padding: 0.5rem;
+
+        &:hover {
+          & .icon {
+            color: #2c89ff;
+          }
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        & .icon {
+          color: #ffffff;
+          font-size: 1.25rem;
+        }
+      }
+
+      & .socialBtnDesc {
+        display: none;
+
+        @include media(xs) {
+          display: grid;
+        }
+      }
+    }
+
+    & .subNavWrap {
+      display: grid;
+      justify-self: start;
+      grid-auto-flow: column;
+      justify-content: left;
+
+      //@include media(md) {
+      //  display: none;
+      //}
+
+      & .subNavBtn {
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 1.25rem;
+        padding: 0 1rem;
+        border-left: 1px solid #808080;
+
+        @include media(lg) {
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+
+        &:hover {
+          color: #2c89ff;
+        }
+      }
+    }
+
+    & .optionWrap {
+      display: none;
+      justify-self: end;
+      grid-auto-flow: column;
+      justify-content: left;
+      grid-gap: 0.5rem;
+
+      @include media(lg) {
+        display: grid;
+        grid-gap: 1rem;
+      }
+
+      & .optionBtn {
+        font-family: "Inter", sans-serif;
+        color: #ffffff;
+        font-size: 1.25rem;
+        padding-left: 1rem;
+        border-left: 1px solid #808080;
+      }
+    }
+
+    & .authorizationWrap {
+      display: grid;
+      position: relative;
+      padding-left: 1rem;
+
+      @include media(md) {
+        padding-left: 0;
+      }
+
+      & .authorizationBtn {
+        cursor: pointer;
+        display: grid;
+        grid-auto-flow: column;
+        justify-content: left;
+        align-items: center;
+        width: max-content;
+        justify-self: end;
+        grid-gap: 0.75rem;
+
+        //@include media(lg) {
+        //  padding-left: 1rem;
+        //  border-left: 1px solid #808080;
+        //}
+
+        & .icon {
+          color: #ffffff;
+          font-size: 1.25rem;
+        }
+
+        & .authorizationNote {
+          font-family: "Inter", sans-serif;
+          color: #ffffff;
+          font-size: 1.25rem;
+          &:hover {
+            color: #2c89ff;
+          }
+
+          & .authorizationNoteSuccess {
+            display: grid;
+            align-items: center;
+            grid-template-columns: max-content 1fr;
+
+            @include media(sm) {
+              grid-gap: 0.5rem;
+            }
+            & .authorizationNoteSuccessIconWrap {
+              display: grid;
+              width: 2rem;
+              height: 2rem;
+              & .icon {
+                font-size: 1.75rem;
+              }
+            }
+            & .authorizationNoteSuccessWallet {
+              display: none;
+
+              @include media(sm) {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

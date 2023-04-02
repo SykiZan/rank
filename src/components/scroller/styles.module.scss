@@ -1,0 +1,30 @@
+@import "../../theme/scss/resources";
+
+.container{
+  cursor: pointer;
+
+  position: fixed;
+  right: 3rem;
+  bottom: 1rem;
+
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background: #2C89FF;
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+  border: none;
+  outline: none;
+  border-radius: 5rem;
+
+  &:hover{
+    background: #111111;
+  }
+  & .icon{
+    width: 100%;
+    color: #ffffff;
+    font-size: 3rem;
+  }
+}

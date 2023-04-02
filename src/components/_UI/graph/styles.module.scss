@@ -1,0 +1,57 @@
+@import "../../../theme/scss/resources";
+
+.container {
+  position: relative;
+  & :global(.rv-xy-plot) {
+    position: relative;
+  }
+  &.dark {
+    & :global(.rv-xy-plot__axis__tick__text) {
+      fill: #ffffff !important;
+    }
+
+    & .customHintBoxName,
+    & .customHintBoxValue {
+      color: #ffffff !important;
+    }
+  }
+
+  & .customHint {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    display: grid;
+
+    height: 4rem;
+    justify-items: center;
+    align-items: center;
+
+    & .customHintContentWrap {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      grid-gap: 2rem;
+      justify-items: center;
+      & .customHintBox {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        grid-gap: 0.5rem;
+
+        & .customHintBoxName {
+          font-family: "Inter", sans-serif;
+          font-size: 1.25rem;
+          font-weight: 400;
+          color: #111111;
+        }
+
+        & .customHintBoxValue {
+          font-family: "Inter", sans-serif;
+          font-size: 1.25rem;
+          font-weight: 400;
+          color: #111111;
+        }
+      }
+    }
+  }
+}

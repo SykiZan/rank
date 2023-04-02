@@ -1,0 +1,82 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+  padding-top: 1.5rem !important;
+
+  @include media(md) {
+    grid-column: 1 / 3;
+    position: relative;
+    top: 3rem;
+    padding-top: 0 !important;
+  }
+
+  &.dark {
+    & .title {
+      color: #ffffff !important;
+    }
+    & .itemWrap {
+      background: #161c2e !important;
+      & .item {
+        color: #ffffff !important;
+        &:after {
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
+
+  & .contentWrap {
+    display: grid;
+    align-content: center;
+    align-items: center;
+    justify-content: space-between;
+    grid-auto-flow: column;
+
+    & .title {
+      font-family: "Inter", sans-serif;
+      font-size: 2.6rem;
+      line-height: 3.7rem;
+      font-weight: 600;
+      color: #131313;
+    }
+
+    & .itemWrap {
+      @include cardRadius;
+      display: grid;
+      grid-auto-flow: column;
+      padding: 0.75rem 1.5rem;
+      background: #ffffff;
+      border: 1px solid #e7e7e7;
+      & .item {
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #111111;
+        padding-left: 0.3rem;
+
+        &:not(:last-child) {
+          &:hover {
+            color: #2c89ff !important;
+          }
+        }
+
+        &:after {
+          content: " /";
+          font-family: "Inter", sans-serif;
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: #111111;
+        }
+        &:last-child {
+          font-weight: 600;
+          cursor: auto !important;
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

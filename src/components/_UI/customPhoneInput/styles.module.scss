@@ -1,0 +1,108 @@
+@import "../../../theme/scss/resources";
+
+.container {
+  &.dark {
+    & :global(.inputWrapInput) {
+      background: #161c2e !important;
+      border: 1px solid #ffffff !important;
+      color: #ffffff !important;
+    }
+
+    & :global(.flag-dropdown) {
+      border: 1px solid #ffffff !important;
+    }
+  }
+  &.containerErr {
+    & :global(.inputWrapInput) {
+      border: 1px solid #e84343 !important;
+    }
+    & :global(.flag-dropdown) {
+      border: 1px solid #e84343 !important;
+    }
+  }
+  & :global(.inputWrapInput) {
+    background: #ffffff !important;
+    border: 1px solid #131313 !important;
+    padding: 1rem 1.5rem !important;
+
+    font-family: "Inter", sans-serif !important;
+    font-style: normal !important;
+    font-size: 1.5rem !important;
+    line-height: 1.8rem !important;
+    color: #131313 !important;
+    width: calc(100% - 4rem) !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    margin-left: 4rem !important;
+    z-index: 100 !important;
+
+    &::placeholder {
+      color: #9d9d9d !important;
+      opacity: 1;
+    }
+    &:-ms-input-placeholder {
+      color: #9d9d9d !important;
+    }
+    &::-ms-input-placeholder {
+      color: #9d9d9d !important;
+    }
+
+    @include media(lg) {
+      padding: 2rem 2.5rem !important;
+    }
+  }
+
+  & :global(.flag-dropdown) {
+    width: 100% !important;
+    z-index: 50 !important;
+    border: 1px solid #131313 !important;
+    border-radius: 0 !important;
+  }
+
+  & :global(.country-list) {
+    background: #ffffff !important;
+    border: 1px solid #131313 !important;
+    padding: 1.5rem 0 !important;
+
+    font-family: "Inter", sans-serif !important;
+    font-style: normal !important;
+    font-size: 1.5rem !important;
+    line-height: 1.8rem !important;
+    color: #131313 !important;
+    width: calc(100% + 2px) !important;
+    height: auto !important;
+    border-radius: 0 !important;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+  }
+
+  & :global(.country) {
+    padding: 1rem 2rem !important;
+    &:hover {
+      //color: #1287A0 !important;
+      background: #2c89ff !important;
+      & :global(.dial-code) {
+        color: #ffffff !important;
+      }
+      & :global(.country-name) {
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  & :global(.highlight) {
+    background: #2c89ff !important;
+
+    & :global(.country-name) {
+      color: #ffffff !important;
+    }
+
+    & :global(.dial-code) {
+      color: #ffffff !important;
+    }
+  }
+}

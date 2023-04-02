@@ -1,0 +1,47 @@
+@import "../../../theme/scss/resources";
+
+.container{
+  @include componentPagePadding;
+  margin-bottom: 3rem;
+
+
+  &.left{
+    @include media(md) {
+      padding-right: 0 !important;
+    }
+  }
+
+  &.right{
+    @include media(md) {
+      padding-left: 0 !important;
+    }
+  }
+
+  &.dark{
+    & .withBg{
+      background: #161C2E !important;
+    }
+  }
+
+  & .contentWrap{
+    display: grid;
+    justify-items: center;
+
+    &.withBg{
+      background: #ffffff;
+      padding: 1.5rem;
+    }
+
+    & img{
+      width: 100%;
+
+      &.maxImg{
+        max-width: 32rem;
+
+        @include media(md) {
+          max-width: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@import "../../theme/scss/resources";
+
+.container {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  z-index: 50;
+  background: #ffffff;
+
+  width: 25rem;
+  border: 3px solid #24252f;
+  border-radius: 1rem;
+
+  & .contentWrap {
+    display: grid;
+    width: 24.4rem;
+    & .titleWrap {
+      border-bottom: 3px solid #24252f;
+      & .titleBox {
+        display: grid;
+        grid-template-columns: 1fr max-content;
+        padding: 1rem;
+        background: #24252f;
+        & .title {
+          font-family: "Inter", sans-serif;
+          font-size: 1.5rem;
+          line-height: 3rem;
+          font-weight: 600;
+          color: #ffffff;
+        }
+
+        & .closeBtn {
+          cursor: pointer;
+          display: grid;
+          & .icon {
+            color: #2c89ff;
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    & .walletBox {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      & .wallet {
+        cursor: pointer;
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 1rem;
+
+        & .walletIconWrap {
+          display: grid;
+
+          &.walletIconWrapMagic {
+            background: #070d1d;
+            border-radius: 5rem;
+            padding: 0.5rem 1rem;
+          }
+        }
+
+        & .walletName {
+          font-family: "Inter", sans-serif;
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #111111;
+          padding-top: 0.5rem;
+        }
+      }
+    }
+  }
+}

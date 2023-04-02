@@ -1,0 +1,69 @@
+@import "../../theme/scss/resources";
+
+.container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @include media(md) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  &.dark {
+    & .contentItem {
+      &.contentItemActive {
+        color: #111111 !important;
+        font-weight: 500 !important;
+      }
+    }
+  }
+  & .contentWrap {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+    border-left: 1px solid #808080;
+    border-right: 1px solid #808080;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @include media(sm) {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    & span {
+      display: grid;
+      grid-template-columns: max-content max-content;
+      grid-gap: 1rem;
+    }
+
+    & .contentItem {
+      cursor: pointer;
+      font-family: "Inter", sans-serif;
+      color: #ffffff;
+      font-size: 1.25rem;
+      position: relative;
+      text-transform: uppercase;
+
+      &:hover {
+        color: #00bfff !important;
+      }
+
+      &.contentItemActive {
+        color: #2c89ff;
+      }
+    }
+
+    & .sep {
+      position: relative;
+      width: 1rem;
+      &:after {
+        content: "\2022";
+        position: absolute;
+        font-size: 3rem;
+        line-height: 2rem;
+        top: 0.1rem;
+        color: #ffffff !important;
+      }
+    }
+  }
+}

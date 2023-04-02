@@ -1,0 +1,60 @@
+@import "../../theme/scss/resources";
+
+.container {
+  background: #edeff4;
+  @include media(md) {
+    display: block;
+  }
+
+  &.dark {
+    background: #070d1d !important;
+  }
+
+  & .topShortColumn {
+    @include media(md) {
+      display: inline-block;
+      width: calc(33.3% - 1rem);
+      vertical-align: top;
+      margin-top: 2rem;
+    }
+  }
+
+  & .topLongColumn {
+    &:first-child {
+      margin-bottom: 3rem;
+      @include media(md) {
+        margin-bottom: 0;
+      }
+    }
+    @include media(md) {
+      display: inline-block;
+      width: calc(66.6% - 1rem);
+      vertical-align: top;
+      margin-right: 2.05rem;
+      margin-top: 2rem;
+      position: sticky;
+      top: 0;
+    }
+  }
+
+  & .bottomLongColumn {
+    @include media(md) {
+      display: inline-block;
+      width: calc(66.6% - 1rem);
+      vertical-align: top;
+      margin-right: 2.05rem;
+      margin-top: 2rem;
+    }
+  }
+
+  & .bottomShortColumn {
+    @include media(md) {
+      display: inline-block;
+      width: calc(33.3% - 1rem);
+      vertical-align: top;
+      margin-top: 2rem;
+      position: sticky;
+      top: 0;
+    }
+  }
+}

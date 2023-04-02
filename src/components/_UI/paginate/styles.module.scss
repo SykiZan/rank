@@ -1,0 +1,152 @@
+@import "../../../theme/scss/resources";
+
+.container {
+  background-color: #ffffff;
+  padding: 16px;
+  @include cardRadius;
+
+  &.dark {
+    background-color: #161c2e;
+
+    & .withBg {
+      background: #161c2e !important;
+    }
+
+    & .iconWrap {
+      // background: #ffffff !important;
+
+      .icon {
+        color: #ffffff;
+      }
+
+      &.iconWrapActive {
+        &:hover {
+          background: #2c89ff !important;
+          color: #ffffff !important;
+
+          .icon {
+            color: #ffffff;
+          }
+        }
+      }
+
+      &.iconWrapNotActive {
+        background: #9a9a9a !important;
+        background: transparent !important;
+        color: #ffffff !important;
+      }
+    }
+
+    & .btnWrap {
+      // background: #ffffff !important;
+
+      color: #ffffff;
+
+      &:hover {
+        background: #2c89ff !important;
+        color: #ffffff !important;
+      }
+
+      &.btnWrapActive {
+        background: #2c89ff !important;
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  & .paginateWrap {
+    display: grid;
+    grid-auto-flow: column;
+    width: max-content;
+    grid-gap: 0.5rem;
+
+    @include media(xs) {
+      // grid-gap: 0.75rem;
+    }
+
+    @include media(sm) {
+      // grid-gap: 1rem;
+    }
+
+    & .paginateItem {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      cursor: pointer;
+      width: 2.5rem;
+      height: 2.5rem;
+
+      @include media(xs) {
+        width: 3.3rem;
+        height: 3.3rem;
+      }
+
+      & .btnWrap {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+
+        padding: 0.5rem;
+        // border: 1px solid #d2d2d2;
+        // border: 1px solid #2c89ff;
+        // border-radius: 0.4rem;
+        font-size: 1.3rem;
+        line-height: 1.3rem;
+        width: 2.5rem;
+
+        @include media(xs) {
+          padding: 0.75rem;
+          font-size: 1.6rem;
+          line-height: 1.6rem;
+          width: 3.3rem;
+        }
+
+        &:hover {
+          background: #2c89ff;
+          color: #ffffff;
+        }
+
+        &.btnWrapActive {
+          background: #2c89ff;
+          color: #ffffff;
+        }
+      }
+
+      & .iconWrap {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+        padding: 0.35rem;
+        // border: 1px solid #d2d2d2;
+        // border: 1px solid #2c89ff;
+        border-radius: 0.4rem;
+
+        @include media(xs) {
+          padding: 0.75rem;
+        }
+
+        &.iconWrapActive {
+          &:hover {
+            background: #2c89ff;
+            color: #ffffff;
+
+            .icon {
+              color: #ffffff;
+            }
+          }
+        }
+
+        &.iconWrapNotActive {
+          // background: #9a9a9a;
+          background: transparent;
+          // color: #ffffff;
+          color: #9a9a9a;
+        }
+
+        & .icon {
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}

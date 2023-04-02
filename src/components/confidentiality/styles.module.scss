@@ -1,0 +1,177 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  //height: 60rem;
+
+  @include media(md) {
+    padding-right: 0;
+    height: calc(100% - 6rem);
+  }
+
+  &.dark {
+    & .contentWrap {
+      background: #161c2e !important;
+
+      & .box {
+        & .mainTitle,
+        & .title,
+        & .subTitle,
+        & .listTitle,
+        & .paragraph,
+        & .listItem {
+          color: #ffffff !important;
+        }
+      }
+    }
+  }
+
+  & .contentWrap {
+    @include cardRadius;
+    display: grid;
+    grid-gap: 2rem;
+    background: #ffffff;
+    padding: 1.5rem;
+
+    @include media(lg) {
+      padding: 5.5rem;
+    }
+
+    & .box {
+      & .mainTitle {
+        font-family: "Inter", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 2.5rem;
+        color: #131313;
+
+        text-align: center;
+        margin-bottom: 3rem;
+
+        @include media(md) {
+          text-align: left;
+        }
+
+        // @include media(lg) {
+        //   font-size: 3rem;
+        //   line-height: 3.5rem;
+        // }
+      }
+
+      & .title {
+        font-family: "Inter", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 500;
+        line-height: 2.5rem;
+        color: #131313;
+        margin-bottom: 2rem;
+
+        // @include media(lg) {
+        //   font-size: 2.75rem;
+        //   line-height: 3.25rem;
+        // }
+      }
+
+      & .subTitle {
+        font-family: "Inter", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2rem;
+        color: #131313;
+
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        @include media(md) {
+          text-align: left;
+        }
+
+        @include media(lg) {
+          font-size: 1.8rem;
+          line-height: 2.5rem;
+        }
+      }
+
+      & .paragraph {
+        font-family: "Inter", sans-serif;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        color: #131313;
+
+        @include media(lg) {
+          font-size: 1.6rem;
+          line-height: 2.5rem;
+        }
+
+        & .br {
+        }
+
+        & .colored {
+          color: #2c89ff;
+          font-weight: 500;
+        }
+      }
+
+      & .listWrap {
+        & .listTitle {
+          font-family: "Inter", sans-serif;
+          font-size: 1.5rem;
+          font-weight: 400;
+          line-height: 2rem;
+          color: #131313;
+
+          text-align: center;
+          margin-top: 2rem;
+          margin-bottom: 1rem;
+
+          @include media(md) {
+            text-align: left;
+          }
+
+          @include media(lg) {
+            font-size: 2rem;
+            line-height: 2.5rem;
+          }
+        }
+
+        & .listBox {
+          display: grid;
+          grid-gap: 1.5rem;
+          margin-bottom: 4rem;
+          padding-left: 1rem;
+          & .listItem {
+            position: relative;
+            font-family: "Inter", sans-serif;
+            font-size: 1.25rem;
+            line-height: 1.5rem;
+            font-weight: 500;
+            color: #131313;
+
+            padding-left: 2rem;
+
+            @include media(lg) {
+              font-size: 1.6rem;
+              line-height: 2.5rem;
+            }
+
+            &:before {
+              content: "\002E";
+              position: absolute;
+              left: 0;
+              font-size: 3rem;
+              top: -0.8rem;
+
+              @include media(lg) {
+                font-size: 4rem;
+                top: -1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,251 @@
+@import "../../theme/scss/resources";
+
+// .page{
+//   @include pagepa
+// }
+
+.dark {
+  .tableRow {
+    background-color: #161c2e;
+  }
+
+  .cell {
+    color: #fff;
+  }
+
+  .description {
+    background-color: #161c2e;
+    color: #fff;
+  }
+  .descriptionInvisible {
+    background-color: #161c2e;
+  }
+
+  .btnFilter {
+    background-color: #171c2d;
+    color: #fff;
+  }
+  .btnFilterSelected {
+    background-color: #2c89ff;
+    color: #fff;
+  }
+}
+
+.container {
+  @include componentPagePadding;
+  padding-top: 0;
+  width: fit-content;
+  //   max-width: 884px;
+  //   min-width: 1084px;
+
+  @include media(md) {
+    padding-right: 0;
+    margin-top: 0;
+  }
+  @media (max-width: 1220px) {
+    padding: 0;
+  }
+}
+
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.empty {
+  height: 87px;
+  background-color: #fff;
+  margin-bottom: 42px;
+}
+
+.filters {
+  display: flex;
+  margin-bottom: 30px;
+  > *:last-of-type {
+    margin-left: auto;
+  }
+  > *:not(:last-of-type) {
+    margin-right: 20px;
+  }
+}
+
+.btnFilter {
+  height: 43px;
+  padding: 0 12px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  @include cardRadius;
+}
+
+.btnFilterSelected {
+  background-color: #16224d;
+  color: #fff;
+}
+
+.tableContainer {
+  > *:not(:last-of-type) {
+    // border-bottom: 1px solid #d8d8d8;
+  }
+  width: 884px;
+}
+
+.tableRow {
+  display: flex;
+  height: 80px;
+  background-color: #fff;
+  > *:not(:last-of-type) {
+    border-right: 1px solid #d8d8d8;
+  }
+}
+
+.firstRow {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.lastRow {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: none !important;
+}
+
+.cell {
+  display: flex;
+  //   justify-content: center;
+  align-items: center;
+  color: #2d2d2d;
+  padding: 0 8px;
+}
+
+.image {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+}
+
+.ratingChange {
+  position: absolute;
+  top: 25%;
+  left: 60%;
+  font-weight: 700;
+  font-size: 8px;
+}
+
+.changeGreen {
+  color: #20e44b;
+}
+.changeRed {
+  color: #e42020;
+}
+
+.col-1 {
+  width: 55px;
+  justify-content: center;
+  position: relative;
+}
+.col-2 {
+  width: 55px;
+  font-weight: 600;
+  font-size: 18px;
+  justify-content: center;
+}
+.col-3 {
+  width: 80px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.col-4 {
+  width: 208px;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  justify-content: center;
+}
+.col-5 {
+  width: 125px;
+  font-size: 14px;
+  font-weight: 600;
+  justify-content: center;
+}
+.col-6 {
+  width: 361px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-right: 35px;
+  padding-left: 30px;
+  justify-content: space-between;
+  span {
+    padding-right: 6px;
+  }
+}
+
+.rowExpandedWrap {
+  > *:not(:last-of-type) {
+    border-bottom: 1px solid #d8d8d8;
+  }
+}
+
+.expandedBorder {
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.expand {
+  cursor: pointer;
+  user-select: none;
+}
+
+.descriptionInvisible {
+  // padding: 30px 55px;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  // overflow-y: scroll;
+  max-height: 0;
+  // height: 0;
+  height: fit-content;
+  visibility: hidden;
+  overflow: hidden;
+
+  transition: all 0.4s;
+  // transition-property: height, max-height, background-color, visibility, color,
+  //   overflow-y, owerflow;
+  // transition-duration: 0.4s;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.description {
+  // padding: 30px 55px;
+  background-color: #fff;
+  color: #000;
+  font-size: 16px;
+  // overflow-y: scroll;
+  // max-height: 220px;
+  // max-height: 220px;
+  max-height: 241px;
+  height: fit-content;
+  // height: 220px;
+  visibility: visible;
+  border-bottom: 1px solid #d8d8d8;
+  overflow: hidden;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  transition: all 0.4s;
+  // transition-property: height, max-height, background-color, visibility, color,
+  //   overflow-y, owerflow;
+  // transition-duration: 0.4s;
+}
+
+.descriptionWrap {
+  padding: 30px 55px;
+  max-height: 240px;
+  overflow-y: auto;
+}

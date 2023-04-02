@@ -1,0 +1,30 @@
+@import "../../theme/scss/resources";
+
+.container {
+  background: #edeff4;
+  @include media(md) {
+    display: grid;
+    grid-template-columns: calc(66.6% - 1.5rem) calc(33.3% - 1.5rem);
+    grid-gap: 3rem;
+  }
+
+  &.dark {
+    background: #070d1d !important;
+  }
+
+  & .shortColumn {
+    padding-bottom: 3rem;
+
+    @include media(md) {
+      margin: 3rem 0;
+      padding-bottom: 0;
+    }
+
+    & .stickyWrap {
+      @include media(md) {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+}

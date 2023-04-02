@@ -1,0 +1,62 @@
+@import "../../theme/scss/resources";
+
+.container {
+  background: #edeff4 !important;
+
+  @include media(md) {
+    display: grid;
+    grid-template-columns: calc(66.6% - 1.5rem) calc(33.3% - 1.5rem);
+    grid-gap: 2rem;
+  }
+
+  &.dark {
+    background: #070d1d !important;
+  }
+
+  & .longColumn {
+    @include media(md) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  & .shortColumn {
+    padding: 3rem 0;
+    // max-width: 619px;
+    margin-right: auto;
+
+    @include media(md) {
+      padding: 0;
+      margin-bottom: 3rem;
+    }
+
+    & .stickyWrap {
+      @include media(md) {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+}
+
+.innerWrap {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 23px;
+  // padding: 0;
+  @media (max-width: 1220px) {
+    grid-template-columns: auto;
+    margin: 0 auto;
+  }
+}
+
+.containerRank {
+  // @include componentPagePadding;
+  grid-template-columns: auto auto;
+  padding: 0;
+
+  @media (max-width: 1220px) {
+    grid-template-columns: auto;
+  }
+  // width: fit-content;
+}

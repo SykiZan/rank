@@ -1,0 +1,54 @@
+@import "../../../theme/scss/resources";
+
+.container {
+  cursor: pointer;
+  padding: 2rem 1rem;
+  display: grid;
+  justify-items: center;
+  transition: all 0.3s;
+  grid-gap: 1rem;
+
+  @include cardRadius;
+  //&:hover{
+  //  background: #edeff4 !important;
+  //}
+  &.dark {
+    & .imgWrap {
+      & .icon {
+        color: #ffffff !important;
+      }
+    }
+    & .subscribe {
+      color: #ffffff !important;
+    }
+    & .note {
+      color: #ffffff !important;
+    }
+  }
+
+  & .imgWrap {
+    display: grid;
+
+    & .icon {
+      font-size: 2rem;
+      color: #ffffff;
+    }
+  }
+
+  & .subscribe {
+    font-family: "Inter", sans-serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #ffffff;
+
+    padding-top: 1rem;
+  }
+
+  & .note {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}

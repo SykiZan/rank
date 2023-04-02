@@ -1,0 +1,188 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+
+  margin-top: 2rem;
+  @include media(md) {
+    grid-column: 1 / 3;
+  }
+
+  &.dark {
+    & .mainTitle {
+      background: #1b1c26 !important;
+      color: #ffffff !important;
+    }
+
+    & .moviesListBox,
+    & .moviesListBoxItem {
+      background: #1b1c26 !important;
+    }
+
+    & .noteTitle {
+      color: #cacaca !important;
+    }
+
+    & .noteAuthor {
+      color: #777777 !important;
+    }
+
+    & .moviesListBoxItem {
+      &:hover {
+        background: #2b2c35 !important;
+      }
+    }
+
+    & .moviesListBoxItemActive {
+      background: #24252f !important;
+    }
+  }
+
+  & .contentWrap {
+    & .mainTitle {
+      @include cardRadius;
+      font-family: "Inter", sans-serif;
+      font-size: 1.8rem;
+      background: #ffffff;
+      padding: 1.5rem;
+
+      color: #131313;
+
+      @include media(md) {
+        grid-column: 1 / 3;
+      }
+    }
+
+    @include media(md) {
+      display: grid;
+      grid-template-columns: 42rem 1fr;
+    }
+    @include media(lg) {
+      grid-template-columns: 52rem 1fr;
+    }
+    @include media(xl) {
+      grid-template-columns: 64rem 1fr;
+    }
+    & .moviesWrap {
+      & .moviesBox {
+        border-bottom-left-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+        @include media(md) {
+          padding-top: 84%;
+        }
+
+        @include media(lg) {
+          padding-top: 67%;
+        }
+
+        @include media(xl) {
+          padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+        }
+
+        & .movies {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+
+          //@include media(md) {
+          //  height: 35rem;
+          //}
+        }
+      }
+    }
+
+    & .moviesListWrap {
+      & .moviesListTitleBox {
+        font-family: "Inter", sans-serif;
+        font-size: 1.6rem;
+        background: #2c89ff;
+        padding: 1.5rem;
+
+        color: #ffffff;
+
+        & .otherListTitle {
+          font-size: 1.4rem;
+        }
+      }
+
+      & .moviesListBox {
+        border-bottom-right-radius: 5px;
+        height: 35rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background: #ffffff;
+        &::-webkit-scrollbar {
+          width: 0;
+          background: #3a3a3a;
+        }
+        &::-webkit-scrollbar-thumb {
+          background: #999;
+        }
+
+        @include media(md) {
+          height: 28.35rem;
+        }
+
+        @include media(lg) {
+          height: 27.8rem;
+        }
+
+        @include media(xl) {
+          height: 29rem;
+        }
+        & .moviesListBoxItem {
+          cursor: pointer;
+          display: grid;
+          grid-template-columns: 10.04rem 1fr;
+          grid-gap: 3rem;
+
+          padding: 1rem;
+          background: #ffffff;
+
+          &:hover {
+            background: #d9eafe;
+            //background: #2b2c35;
+          }
+
+          &.moviesListBoxItemActive {
+            background: #b2d6fe;
+            & .imgWrap {
+              border: 2px solid #2c89ff;
+              height: max-content;
+            }
+          }
+
+          & .imgWrap {
+            display: grid;
+
+            & img {
+              width: 100%;
+            }
+          }
+
+          & .noteWrap {
+            & .noteTitle {
+              font-family: "Inter", sans-serif;
+              font-size: 1.4rem;
+              color: #131313;
+            }
+
+            & .noteAuthor {
+              font-family: "Inter", sans-serif;
+              font-size: 1.3rem;
+              color: #2c89ff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

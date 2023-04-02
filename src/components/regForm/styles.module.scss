@@ -1,0 +1,439 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+  @include cardRadius;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  //height: 60rem;
+
+  @include media(md) {
+    padding-right: 0;
+    //height: calc(100% - 6rem);
+  }
+
+  &.dark {
+    & .contentWrap {
+      background: #161c2e !important;
+    }
+
+    & .listTitle,
+    & .title,
+    & .paragraph,
+    & .listItem,
+    & .inputTitle,
+    & .formCheck,
+    & .mainBtn,
+    & .formTitle,
+    & .input,
+    & .textarea {
+      color: #ffffff !important;
+    }
+
+    & .input,
+    & .textarea,
+    & .checkbox,
+    & .mainBtn {
+      background: transparent !important;
+      border: 1px solid #ffffff !important;
+    }
+    .icon {
+      color: #fff;
+    }
+  }
+
+  & .contentWrap {
+    @include cardRadius;
+    background: #ffffff;
+    height: 100%;
+    display: grid;
+    grid-gap: 2rem;
+    padding: 1.5rem;
+
+    @include media(xl) {
+      padding: 1.5rem 10rem;
+    }
+
+    @include media(fullHD) {
+      padding: 1.5rem 20rem;
+    }
+
+    & .box {
+      & .title {
+        font-family: "Inter", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 600;
+        line-height: 2.5rem;
+        color: #131313;
+
+        text-align: center;
+        margin-bottom: 3rem;
+
+        @include media(md) {
+          text-align: left;
+        }
+
+        @include media(lg) {
+          font-size: 3rem;
+          line-height: 3.5rem;
+        }
+      }
+
+      & .paragraph {
+        font-family: "Inter", sans-serif;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        color: #131313;
+
+        @include media(lg) {
+          font-size: 1.7rem;
+          line-height: 2.5rem;
+        }
+
+        & .colored,
+        & .link {
+          color: #2c89ff;
+          font-weight: 500;
+        }
+      }
+
+      & .listTitle {
+        font-family: "Inter", sans-serif;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2rem;
+        color: #131313;
+
+        text-align: center;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+
+        & .colored,
+        & .link {
+          color: #2c89ff;
+          font-weight: 500;
+        }
+
+        @include media(md) {
+          text-align: left;
+        }
+
+        @include media(lg) {
+          font-size: 2rem;
+          line-height: 2.5rem;
+        }
+      }
+
+      & .listWrap {
+        display: grid;
+        grid-gap: 1rem;
+        & .listItem {
+          position: relative;
+          font-family: "Inter", sans-serif;
+          font-size: 1.25rem;
+          line-height: 1.5rem;
+          font-weight: 500;
+          color: #131313;
+
+          padding-left: 2rem;
+
+          @include media(lg) {
+            font-size: 1.7rem;
+            line-height: 2.5rem;
+          }
+
+          &:before {
+            content: "\002E";
+            position: absolute;
+            left: 0;
+            font-size: 3rem;
+            top: -0.8rem;
+
+            @include media(lg) {
+              font-size: 4rem;
+              top: -1rem;
+            }
+          }
+        }
+      }
+
+      & .bgNote {
+        background: #2c89ff;
+        padding: 3rem;
+        & .bgNoteMain {
+          font-family: "Inter", sans-serif;
+          font-size: 2.2rem;
+          font-weight: 600;
+          line-height: 2.5rem;
+          color: #ffffff;
+
+          text-align: center;
+          margin-bottom: 3rem;
+
+          //@include media(md) {
+          //  text-align: left;
+          //}
+
+          @include media(lg) {
+            font-size: 3rem;
+            line-height: 3.5rem;
+          }
+        }
+
+        & .bgNoteOther {
+          font-family: "Inter", sans-serif;
+          font-size: 1.25rem;
+          line-height: 1.5rem;
+          color: #ffffff;
+          text-align: center;
+
+          @include media(lg) {
+            font-size: 1.7rem;
+            line-height: 2.5rem;
+          }
+        }
+      }
+
+      & .formWrap {
+        margin-top: 3rem;
+
+        @include media(lg) {
+          margin-top: 5rem;
+        }
+        & .formTitle {
+          font-family: "Inter", sans-serif;
+          font-size: 2.2rem;
+          font-weight: 600;
+          line-height: 2.5rem;
+          color: #131313;
+          text-align: center;
+          margin-bottom: 1.5rem;
+
+          @include media(lg) {
+            font-size: 3.2rem;
+            line-height: 3.7rem;
+
+            margin-bottom: 7rem;
+          }
+        }
+
+        & .formBox {
+          display: grid;
+          grid-gap: 2rem;
+
+          //@include media(sm) {
+          //  grid-template-columns: 1fr 1fr;
+          //}
+
+          @include media(lg) {
+            grid-gap: 3.5rem;
+          }
+
+          @include media(xl) {
+            column-gap: 15rem;
+          }
+
+          & .inputWrap {
+            position: relative;
+
+            &.inputWrapPsw {
+              position: relative;
+
+              & .input {
+                padding: 1rem 3rem 1rem 1.5rem;
+
+                @include media(lg) {
+                  padding: 2rem 5rem 2rem 2.5rem;
+                }
+              }
+
+              & .absPswBtn {
+                cursor: pointer;
+
+                display: grid;
+                position: absolute;
+                top: 3.25rem;
+                right: 0.75rem;
+
+                @include media(lg) {
+                  top: 5.5rem;
+                  right: 1.5rem;
+                }
+
+                & .icon {
+                  font-size: 1.5rem;
+
+                  @include media(lg) {
+                    font-size: 2rem;
+                  }
+                }
+              }
+            }
+            & .inputTitle {
+              font-family: "Inter", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+
+              color: #131313;
+              margin-bottom: 0.5rem;
+
+              @include media(lg) {
+                font-size: 1.6rem;
+                line-height: 1.9rem;
+
+                margin-bottom: 1.5rem;
+              }
+            }
+
+            & .input {
+              width: 100%;
+              border: 1px solid #2c89ff;
+              border-radius: 5px;
+              padding: 1rem 1.5rem;
+
+              outline: none;
+
+              font-family: "Inter", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+
+              color: #131313;
+
+              &.inputWithErr {
+                border: 1px solid #e84343 !important;
+              }
+
+              &::placeholder {
+                color: #9d9d9d;
+                opacity: 1;
+              }
+              &:-ms-input-placeholder {
+                color: #9d9d9d;
+              }
+              &::-ms-input-placeholder {
+                color: #9d9d9d;
+              }
+
+              @include media(lg) {
+                padding: 2rem 2.5rem;
+              }
+            }
+
+            & .textarea {
+              width: 100%;
+              height: 13rem;
+              border: 1px solid #131313;
+              padding: 1rem 1.5rem;
+
+              resize: none;
+              outline: none;
+
+              font-family: "Inter", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1.5rem;
+              line-height: 1.8rem;
+
+              color: #131313;
+
+              @include media(lg) {
+                padding: 2rem 2.5rem;
+              }
+            }
+
+            & .inputErr {
+              position: absolute;
+              bottom: -2rem;
+              right: 0;
+
+              color: #e84343;
+
+              font-family: "Inter", sans-serif;
+              font-style: normal;
+              font-weight: 400;
+              font-size: 1.3rem;
+              line-height: 1.5rem;
+            }
+          }
+
+          & .textareaWrap {
+            @include media(sm) {
+              grid-column: 1 / 3;
+            }
+          }
+        }
+
+        & .formCheck {
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 1.3rem;
+          line-height: 2rem;
+
+          color: #131313;
+          text-align: center;
+
+          margin-top: 3rem;
+
+          @include media(lg) {
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+
+            margin-top: 5rem;
+          }
+
+          &.formCheckErr {
+            color: #e84343;
+          }
+
+          & .checkBox {
+            cursor: pointer;
+
+            width: 2rem;
+            height: 2rem;
+
+            margin-right: 1rem;
+            vertical-align: middle;
+
+            @include media(lg) {
+              width: 2.4rem;
+              height: 2.4rem;
+            }
+          }
+        }
+
+        & .mainBtn {
+          cursor: pointer;
+          font-family: "Inter", sans-serif;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 1.6rem;
+          line-height: 1.9rem;
+
+          background-color: #2c89ff;
+
+          // text-transform: uppercase;
+          // border: 1px solid #131313;
+          border-radius: 5px;
+          padding: 1.5rem 3rem;
+          text-align: center;
+
+          color: #f5f5f5;
+
+          width: 22rem;
+          margin: 0 auto;
+
+          margin-top: 3rem;
+
+          @include media(lg) {
+            margin-top: 5rem;
+          }
+        }
+      }
+    }
+  }
+}

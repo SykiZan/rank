@@ -1,0 +1,221 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+  margin-top: 2rem;
+
+  @include media(md) {
+    padding-left: 0;
+  }
+
+  &.dark {
+    & .contentWrap {
+      background: #171c2d !important;
+    }
+    & .mainTitle {
+      color: #ffffff !important;
+    }
+
+    & .title {
+      color: #ffffff !important;
+    }
+
+    & .iconWrap {
+      border-radius: 5rem !important;
+      overflow: hidden;
+      & .icon {
+        background: #ffffff !important;
+      }
+    }
+
+    .listItem {
+      .note {
+        color: #fff !important;
+      }
+      .result {
+        color: #fff !important;
+      }
+
+      .fill {
+        background-color: #0075ff !important;
+      }
+    }
+  }
+
+  & .marginWrap {
+    margin-bottom: 2rem;
+    @include media(md) {
+      margin-bottom: 0;
+    }
+
+    & .contentWrap {
+      background: #ffffff;
+      padding: 1.5rem;
+      @include cardRadius;
+
+      @include media(md) {
+        margin-bottom: 2rem;
+      }
+
+      &.resultContentWrap {
+        & .sendBtn {
+          display: none !important;
+        }
+      }
+
+      & .mainTitle {
+        font-family: "Inter", sans-serif;
+        font-size: 1.7rem;
+        color: #131313;
+
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #2c89ff;
+
+        & span {
+          font-weight: 600;
+        }
+      }
+
+      & .contentBox {
+        & .title {
+          font-family: "Inter", sans-serif;
+          font-size: 1.9rem;
+          font-weight: 600;
+          color: #111111;
+
+          margin: 3rem 0;
+        }
+
+        & .listWrap {
+          display: grid;
+          grid-gap: 1.5rem;
+
+          & .listItem {
+            display: grid;
+            grid-template-columns: max-content 1fr;
+            grid-gap: 1.5rem;
+            align-items: center;
+
+            position: relative;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            &:hover {
+              .checkBox {
+                border-color: #2c89ff;
+                background-color: #96c4ff;
+              }
+            }
+
+            .checkBox {
+              width: 37px;
+              height: 37px;
+              border: 1px solid #aaaaaa;
+              border-radius: 5px;
+
+              // &:hover {
+              //   border-color: #2c89ff;
+
+              // }
+            }
+
+            & .fill {
+              position: absolute;
+              height: 100%;
+              background-color: #96c4ff;
+              border-radius: 5px;
+            }
+
+            &.listItemActive {
+              & .icon {
+                color: #0075ff;
+              }
+            }
+
+            &.listItemPassive {
+              &:hover {
+                & .icon {
+                  color: #2c89ff;
+                }
+              }
+            }
+
+            & .iconWrap {
+              display: grid;
+              color: #888888;
+              & .icon {
+                font-size: 1.5rem;
+              }
+            }
+
+            & .result {
+              display: grid;
+              align-items: center;
+              justify-items: center;
+              z-index: 10;
+              // background: #2c89ff;
+              // color: #ffffff;
+              color: #111111;
+              font-size: 1.4rem;
+
+              // border-radius: 5rem;
+              width: 5rem;
+            }
+
+            & .note {
+              font-family: "Inter", sans-serif;
+              font-size: 1.4rem;
+              color: #111;
+              z-index: 10;
+            }
+          }
+
+          .listItemAfter {
+            border: 1px solid #2c89ff;
+            grid-template-columns: 1fr auto;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 14px;
+            padding-right: 17px;
+          }
+        }
+
+        & .sendBtn {
+          cursor: pointer;
+          padding: 0.5rem 1.5rem;
+          margin-top: 2rem;
+
+          font-family: "Inter", sans-serif;
+          font-size: 1.4rem;
+
+          color: #fff;
+          background-color: #2c89ff;
+          border-color: #2c89ff;
+          border-radius: 1rem;
+
+          width: max-content;
+          transition: all 0.3s;
+
+          &:disabled {
+            background: grey;
+            border-color: grey;
+
+            &:hover {
+              color: #fff !important;
+              background-color: grey !important;
+              border-color: grey !important;
+            }
+          }
+
+          &:hover {
+            color: #fff;
+            background-color: #1b1c26;
+            border-color: #1b1c26;
+          }
+        }
+      }
+    }
+  }
+}

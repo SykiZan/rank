@@ -1,0 +1,296 @@
+@import "../../theme/scss/resources";
+
+.container {
+  @include componentPagePadding;
+  margin-top: 3rem;
+
+  @include media(md) {
+    padding-right: 0;
+  }
+
+  &.dark {
+    & .contentWrap {
+      background: #161c2e !important;
+    }
+    & .title {
+      color: #ffffff !important;
+    }
+    & .paragraph {
+      color: #ffffff !important;
+    }
+    & .listItemNote {
+      color: #ffffff !important;
+    }
+    //& .listItemImgWrap{
+    //  & .icon{
+    //    color: #ffffff !important;
+    //  }
+    //}
+    & .quoteWrap {
+      background-color: #070d1d !important;
+      & .quoteNote {
+        color: #aaaaaa !important;
+      }
+      & .quoteAuthor,
+      & .quoteAuthorPosition {
+        color: #ffffff !important;
+      }
+    }
+  }
+
+  & .contentWrap {
+    background: #ffffff;
+    margin-bottom: 3rem;
+
+    @include media(md) {
+      display: grid;
+    }
+
+    & .mainBox {
+      & .imgWrap {
+        display: grid;
+        position: relative;
+
+        & img {
+          width: 100%;
+        }
+
+        & .absLikeWrap {
+          cursor: pointer;
+
+          position: absolute;
+          right: 0;
+          bottom: 0;
+
+          width: 5rem;
+          height: 5rem;
+
+          display: grid;
+          align-items: center;
+          justify-items: center;
+
+          background: #2c89ff;
+          border: 2px solid transparent;
+
+          &:hover {
+            background: #ffffff;
+            border: 2px solid #2c89ff;
+
+            & .icon {
+              color: #2c89ff;
+            }
+          }
+
+          & .icon {
+            font-size: 2rem;
+            color: #ffffff;
+          }
+        }
+      }
+
+      & .noteBox {
+        padding: 1.5rem;
+
+        & .title {
+          font-family: "Inter", sans-serif;
+          font-size: 3rem;
+          font-weight: 400;
+          color: #111111;
+
+          margin: 3rem 0;
+          line-height: 3.5rem;
+        }
+
+        & .statWrap {
+          display: grid;
+          grid-auto-flow: column;
+          grid-gap: 0.4rem;
+          justify-content: start;
+
+          font-family: "Inter", sans-serif;
+          font-size: 1.5rem;
+          font-weight: 600;
+          font-style: italic;
+
+          color: #9a9a9a;
+
+          margin-bottom: 3rem;
+
+          & .icon {
+            position: relative;
+            top: 2px;
+            margin-right: 0.4rem;
+          }
+        }
+
+        & .paragraph {
+          font-family: "Inter", sans-serif;
+          font-size: 1.5rem;
+          line-height: 2.4rem;
+          color: #131313;
+
+          & img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 484px;
+            max-height: 484px;
+            margin: 0 auto;
+          }
+
+          & span {
+            &:global(.glossary) {
+              color: #2c89ff !important;
+              cursor: pointer;
+              position: relative;
+
+              &:hover {
+                &::before {
+                  width: 30rem;
+                  content: attr(data-content);
+                  display: block;
+                  position: absolute;
+                  left: auto;
+                  top: 2rem;
+                  padding: 1rem;
+                  border: 1px solid #2c89ff;
+                  background: #ffffff;
+
+                  @include media(sm) {
+                    width: 48rem;
+                  }
+
+                  @include media(md) {
+                    width: 40rem;
+                  }
+
+                  @include media(lg) {
+                    width: 55rem;
+                  }
+
+                  @include media(xl) {
+                    width: 70rem;
+                  }
+                }
+              }
+            }
+          }
+
+          blockquote {
+            p {
+              span {
+                font-size: 17px;
+                font-style: italic;
+                font-weight: 600 !important;
+                line-height: 24.5px;
+                border-left: 2px solid #48a0f8;
+                display: block;
+                padding-left: 9px;
+                margin-left: 20px;
+              }
+            }
+          }
+
+          & p,
+          & h2,
+          & ul,
+          & ol {
+            line-height: 2.4rem;
+            margin-bottom: 2.5rem;
+          }
+
+          & ul,
+          ol li {
+            margin-left: 2.5rem;
+          }
+          em {
+            span {
+              font-weight: bold !important;
+            }
+          }
+        }
+
+        & .quoteWrap {
+          padding: 1.5rem 5rem;
+          margin: 3rem 0;
+          background-color: #f9f9f9;
+          position: relative;
+          & .quoteNote {
+            font-family: "Inter", sans-serif;
+            font-size: 1.5rem;
+            line-height: 2.8rem;
+            color: #777777;
+
+            margin-bottom: 1rem;
+          }
+
+          & .quoteAuthor {
+            display: inline-block;
+
+            font-family: "Inter", sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #222222;
+            text-transform: uppercase;
+          }
+
+          & .quoteAuthorPosition {
+            display: inline-block;
+            padding-left: 0.25rem;
+
+            font-family: "Inter", sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #222222;
+          }
+
+          & .quoteAbsIconWrap {
+            display: grid;
+            position: absolute;
+            left: 1.5rem;
+            top: 1.75rem;
+            transform: rotate(180deg);
+
+            & .icon {
+              color: #2c89ff;
+              font-size: 2.5rem;
+            }
+          }
+        }
+
+        & .listWrap {
+          display: grid;
+          grid-gap: 0.25rem;
+          margin: 3rem 0;
+          & .listItem {
+            display: grid;
+            grid-auto-flow: column;
+            justify-content: start;
+            align-content: center;
+            align-items: center;
+            grid-gap: 1rem;
+
+            & .listItemImgWrap {
+              display: grid;
+              //transform: rotate(90deg);
+              padding: 0.25rem;
+              & .icon {
+                width: 100%;
+                color: #131313;
+                font-size: 2rem;
+
+                transform: rotate(90deg);
+              }
+            }
+            & .listItemNote {
+              font-family: "Inter", sans-serif;
+              font-size: 1.7rem;
+              line-height: 2.8rem;
+              color: #777777;
+            }
+          }
+        }
+      }
+    }
+  }
+}
